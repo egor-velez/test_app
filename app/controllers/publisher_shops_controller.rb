@@ -1,0 +1,16 @@
+# frozen_string_literal: true
+
+class PublisherShopsController < ApplicationController
+  def show
+    render json: shops
+  end
+
+  private
+
+  def shops
+    service = PublisherShopsService.new(publisher_id: params[:id])
+    return service.result if service.call
+    return { errors: service.errors }
+  end
+
+end
