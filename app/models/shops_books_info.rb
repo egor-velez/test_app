@@ -3,6 +3,7 @@
 class ShopsBooksInfo < ApplicationRecord
   belongs_to :shop
   belongs_to :book
+
   validates :in_stock, numericality: { only_integer: true, greater_than_or_equal_to: 0  }
 
   def sell(number_of_copies)

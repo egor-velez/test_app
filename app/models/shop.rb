@@ -2,5 +2,6 @@
 
 class Shop < ApplicationRecord
   has_many :shops_books_info
+
   validates :name, presence: true
 end
