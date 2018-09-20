@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class PublisherShopsController < ApplicationController
+  #/publisher_shops/:id
   def show
-    render json: shops
+    render json: shops #, status: :unprocessable_entity
   end
 
   private

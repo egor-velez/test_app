@@ -42,11 +42,7 @@ class PublisherShopsService
   end
 
   def json_result
-    json_result = { shops: [] }
-    shop_sold.each do |order_sold|
-      json_result[:shops] << json_shop(grouped_result[order_sold.id], order_sold.sold_all)
-    end
-
+    json_result = { shops: shop_sold.map{|x| json_shop(grouped_result[x.id], x.sold_all)}  }
     json_result
   end
 
